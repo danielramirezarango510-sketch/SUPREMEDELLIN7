@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supremedellin - Catálogo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <canvas id="stars"></canvas>
+
+  <header>
+    <h1>SUPREMEDELLIN</h1>
+  </header>
+
+  <div class="categories">
+    <button class="category-btn" onclick="showAllProducts()">Todos</button>
+    <button class="category-btn" onclick="showSubcategories('hombre')">Hombre</button>
+    <button class="category-btn" onclick="showSubcategories('mujer')">Mujer</button>
+    <button class="category-btn" onclick="showSubcategories('unisex')">Unisex</button>
+  </div>
+
+  <!-- SUBCATEGORÍAS -->
+  <div id="sub-hombre" class="subcategories">
+    <button class="subcategory-btn" onclick="showProducts('camisetasH')">Camisetas</button>
+    <button class="subcategory-btn" onclick="showProducts('hoodiesH')">Hoodies</button>
+    <button class="subcategory-btn" onclick="showProducts('accesoriosH')">Accesorios</button>
+    <button class="subcategory-btn" onclick="showProducts('gorrash')">Gorras</button>
+
+  </div>
+
+  <div id="sub-mujer" class="subcategories">
+    <button class="subcategory-btn" onclick="showProducts('topsM')">Tops</button>
+    <button class="subcategory-btn" onclick="showProducts('cropM')">Crop Hoodies</button>
+    <button class="subcategory-btn" onclick="showProducts('accesoriosM')">Accesorios</button>
+  </div>
+
+  <div id="sub-unisex" class="subcategories">
+    <button class="subcategory-btn" onclick="showProducts('buzosU')">Buzos</button>
+    <button class="subcategory-btn" onclick="showProducts('camisetasU')">Camisetas</button>
+  </div>
+
+  <!-- CONTENEDOR DE PRODUCTOS -->
+  <section class="products" id="product-container">
+    <!-- Productos temporales -->
+    <div class="product-card" data-category="accesoriosH" onclick="openModal('Mini Bag Supreme Utility', 'Unica', 'White', '$320.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\1da4e5e5-682b-48db-b6ae-d1254228285d.jpeg" alt="Camiseta Hombre 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\IMG_1241.jpeg" alt="Camiseta Hombre 2">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\IMG_1240.jpeg" alt="Camiseta Hombre 3">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Mini Bag Supreme</h3>
+      <p>$320.000 COP</p>
+    </div>
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme Demin camp washer Pink', 'Ajustable', 'Pink', '$420.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\1f125e4a-0af3-4426-bac8-e554490e189e.jpeg" alt="Hoodie Hombre 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\551e4da1-b601-4b8c-90af-05e08349dc2e.jpeg" alt="Hoodie Hombre 2">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\c5551728-0f28-4aab-8893-c77dec6e991d.jpeg" alt="Hoodie Hombre 3">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme Demin Camp Washer Pink</h3>
+      <p>$420.000 COP</p>
+    </div>
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme Splatter 6-paneles Black', 'Ajustable', 'Black', '$420.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\3edebc02-87cc-4af4-b462-65f0c626e67a.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\3ce870df-b5f5-4650-9e3b-c9bc9f5e69fb.jpeg" alt="Buzo Unisex 2">
+         <img class="carousel-image active" src="" alt="Hoodie Hombre 1">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme Splatter 6-paneles Black</h3>
+      <p>$420.000 COP</p>
+    </div>
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme X New Era Bones Box Logo Red', '7 1/2', 'Red', '$520.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\IMG_0420.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\IMG_0419.jpeg" alt="Buzo Unisex 2">
+         <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\IMG_0418.jpeg" alt="Hoodie Hombre 1">
+          <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\IMG_1250.png" alt="Hoodie Hombre 4">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme X New Era Bones Box Logo Red</h3>
+      <p>$520.000 COP</p>
+    </div>
+
+<div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme Overdyed Camp', 'Ajustable', 'Pink', '$420.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\IMG_1251 (1).PNG" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\eaff5a46-a8b0-4189-aa11-620cae0e70de.jpeg" alt="Buzo Unisex 2">
+         <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\2a51fc9f-baa1-40e1-a79b-0ef1203c4dcb.jpeg" alt="Hoodie Hombre 1">
+          <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\4488edce-f4da-430e-8482-2b74d8a0669b.jpeg" alt="Hoodie Hombre 4">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme Overdyed Camp</h3>
+      <p>$420.000 COP</p>
+    </div>
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme Pinup Mesh Back 5-Panel Red', 'Ajustable', 'Red', '$420.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\81eb3f8e-9e73-443f-a919-541a77791e1c.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\efe72bb1-f356-4c36-8a9e-f0df10e55894.jpeg" alt="Buzo Unisex 2">
+         <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\7b0b7c0b-a219-429d-8bdd-bd0bc2d70949.jpeg" alt="Hoodie Hombre 1">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme Pinup Mesh Back 5-Panel Red</h3>
+      <p>$420.000 COP</p>
+    </div>
+
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme Pinup Mesh Back 5- Panel White Camo', 'Ajustable', 'White Camo', '$420.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\7e6a84b4-1fd3-4e24-bc0e-f38561753566.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\86df879d-1156-41ee-b785-899758392332.jpeg" alt="Buzo Unisex 2">
+         <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\c901e03c-7178-462e-84e4-613d40948c1c.jpeg" alt="Hoodie Hombre 1">>
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme Pinup Mesh Back 5- Panel White Camo</h3>
+      <p>$420.000 COP</p>
+    </div>
+
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme Pinup Mesh Back 5- Panel Black Camo', 'Ajustable', 'Black', '$420.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\3b59c7fa-9d96-4eec-8e0e-549b7c17e6ac.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\78c50c1c-057b-4f24-be3d-427efe7a5ec1.jpeg" alt="Buzo Unisex 2">
+         <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\3b5ae05f-3f1d-4355-857e-bdb057eeaade.jpeg" alt="Hoodie Hombre 1">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme Pinup Mesh Back 5- Panel Black Camo</h3>
+      <p>$420.000 COP</p>
+    </div>
+
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme Overdyed Camp', 'Ajustable', 'Camo', '$420.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\9aed8f7e-62b8-4fa8-a402-bc98856bcc6b.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\8af77b73-666f-463f-9b24-9202a54d48f1.jpeg" alt="Buzo Unisex 2">
+         <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\50f6de0b-223a-432b-b4f8-3c428e631dbe.jpeg" alt="Hoodie Hombre 1">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme Overdyed Camp</h3>
+      <p>$420.000 COP</p>
+    </div>
+
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme X Vanson Leathers Mesh Back', 'Ajustable', 'Black', '$470.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\c3e7a439-892c-4e67-9670-ab3d1dc3207e.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\bb329153-af72-47d1-b16e-43e282e23fec.jpeg" alt="Buzo Unisex 2">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme X Vanson Leathers Mesh Back</h3>
+      <p>$470.000 COP</p>
+    </div>
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme Multi Logo New Era', '7 1/2', 'Black', '$720.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\82957e04-94b0-48a4-be3f-b0b26e3ecdb2.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\cfa0e57e-5dfc-4a79-b8d2-cc93240bbe49.jpeg" alt="Buzo Unisex 2">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\b1ccb8d1-1cd6-4b8f-927e-4566ad0b073f.jpeg" alt="Buzo Unisex 2">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\d2a28dfe-eff9-476c-8865-2ac719c15de6.jpeg" alt="Buzo Unisex 2">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme Multi Logo New Era</h3>
+      <p>$720.000 COP</p>
+    </div>
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme X Sharpie Box Logo', '7 1/4', 'Black', '$720.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\740183b3-43f7-46fa-bb7b-1cc2fc7bb05b.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\a6984e7e-96e4-4751-8db1-f63c95370451.jpeg" alt="Buzo Unisex 2">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\d55c1319-78eb-48a6-b834-fbd2183d7fd3.jpeg" alt="Buzo Unisex 2">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\GORRAS\cec80f49-587c-4ea8-8b23-a54667dee464.jpeg" alt="Buzo Unisex 2">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme X Sharpie Box Logo</h3>
+      <p>$720.000 COP</p>
+    </div>
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme X New Era Sharp Spellout White', 'Ajustable', 'White', '$460.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\dbee46dc-b6a8-4920-ace8-106e9ea02116(1).jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\3febf98e-a466-4b28-8316-5a8d24c4fa4a.jpeg" alt="Buzo Unisex 2">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\b613b72a-0334-43e9-98d6-b5dac21cbfbf(1).jpeg" alt="Buzo Unisex 2">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme X New Era Sharp Spellout White</h3>
+      <p>$460.000 COP</p>
+    </div>
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Jordan Essentials Tracksuit Bottom Pruple', 'Ajustables', 'Blue', '$265.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\7a8d1b8b-ec25-4b3f-8393-ee6155760a74.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\5466f223-9131-4438-a76d-e93d253b0e16.jpeg" alt="Buzo Unisex 2">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\f59ff387-fabf-41ae-9216-21adb2bb1d9a.jpeg" alt="Buzo Unisex 2">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Jordan Essentials Tracksuit Bottom Pruple</h3>
+      <p>$265.000 COP</p>
+    </div>
+
+    <div class="product-card" data-category="gorrash" onclick="openModal('Cap Supreme The Exorcist Camp Multicolor', 'Ajustable', 'Multicolor', '$460.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\IMG_1045.jpeg" alt="Buzo Unisex 1">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\IMG_1046.jpeg" alt="Buzo Unisex 2">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\IMG_1047.jpeg" alt="Buzo Unisex 2">
+        <img class="carousel-image" src="c:\Users\usuario\Documents\CATALOGO SUPREME\FOTOS CATALOGO\wetransfer_fce4a874-a5b1-4cb4-8b46-3cfe2e9ed272-jpeg_2025-10-16_2012\IMG_1049.jpeg" alt="Buzo Unisex 2">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Cap Supreme The Exorcist Camp Multicolor</h3>
+      <p>$460.000 COP</p>
+    </div>
+
+
+
+
+    <div class="product-card" data-category="camisetasU" onclick="openModal('Camiseta Box Logo Unisex', 'S, M, L', 'Blanco, Azul', '$110.000 COP')">
+      <div class="image-carousel">
+        <img class="carousel-image active" src="https://via.placeholder.com/300x300?text=Camiseta+Unisex+1" alt="Camiseta Unisex 1">
+        <img class="carousel-image" src="https://via.placeholder.com/300x300?text=Camiseta+Unisex+2" alt="Camiseta Unisex 2">
+        <img class="carousel-image" src="https://via.placeholder.com/300x300?text=Camiseta+Unisex+3" alt="Camiseta Unisex 3">
+        <img class="carousel-image" src="https://via.placeholder.com/300x300?text=Camiseta+Unisex+4" alt="Camiseta Unisex 4">
+        <button class="prev-btn" onclick="prevImage(event, this)">&#10094;</button>
+        <button class="next-btn" onclick="nextImage(event, this)">&#10095;</button>
+      </div>
+      <h3>Camiseta Box Logo Unisex</h3>
+      <p>$110.000 COP</p>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p><strong>Tallas:</strong> <span id="modalSizes"></span></p>
+      <p><strong>Colores:</strong> <span id="modalColors"></span></p>
+      <p><strong>Precio:</strong> <span id="modalPrice"></span></p>
+    </div>
+  </div>
+
+  <!-- BOTONES FLOTANTES -->
+  <div class="floating-buttons">
+    <a href="https://www.instagram.com/supremedellin/" target="_blank" class="floating-btn" title="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    </a>
+    <a href="#" target="_blank" class="floating-btn" title="WhatsApp">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+      </svg>
+    </a>
+    <a href="#" target="_blank" class="floating-btn" title="TikTok">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
